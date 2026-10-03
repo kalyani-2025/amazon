@@ -4,17 +4,18 @@ from django.shortcuts import render
 def home(request):
 
     nav_items = [
-        "Fresh",
-        "Prime Video",
-        "Sell",
-        "Bestsellers",
         "Today's Deals",
-        "Mobiles",
-        "New Releases",
-        "Customer Service",
+        "Coupons",
+        "Hotel Booking",
+        "Gift Cards",
+        "Amazon Pay",
+        "Browsing History",
+        "Keep Shopping for",
+        "Buy Again",
         "Prime",
-        "Electronics",
-        "Amazon Pay"
+        "Gift Ideas",
+        "Fresh",
+        "Grocery & Gourmet Foods"
     ]
 
     trending = [
@@ -40,8 +41,16 @@ def home(request):
         "Beauty, Health, Grocery"
     ]
 
+    more_categories = [
+        "Books",
+        "Toys & Games",
+        "Sports & Fitness",
+        "Automotive",
+        "Baby Products"
+    ]
+
     programs = [
-        "Gift Cards",
+        "Gift Cards & Mobile Recharge",
         "Amazon Launchpad",
         "Amazon Business",
         "Handloom and Handicrafts"
@@ -53,11 +62,12 @@ def home(request):
         "Sign in"
     ]
 
-    return render(request, 'home.html', {
-        'nav_items': nav_items,
-        'trending': trending,
-        'digital': digital,
-        'categories': categories,
-        'programs': programs,
-        'help_settings': help_settings
+    return render(request, "home.html", {
+        "nav_items": nav_items,
+        "trending": trending,
+        "digital": digital,
+        "categories": categories,
+        "more_categories": more_categories,
+        "programs": programs,
+        "help_settings": help_settings
     })

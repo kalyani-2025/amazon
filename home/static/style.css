@@ -1,226 +1,370 @@
+/* ==================================================
+   BASIC RESET
+================================================== */
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+
 body {
     font-family: Arial, sans-serif;
-    background-color: #e3e6e6;
+    background-color: white;
+    color: #111;
 }
 
 
-/* =========================
+/* ==================================================
    TOP HEADER
-========================= */
+================================================== */
 
 .top-header {
-    background-color: #131921;
-    color: white;
+
+    width: 100%;
+
     min-height: 65px;
 
+    background-color: #131921;
+
+    color: white;
+
     display: flex;
+
     align-items: center;
+
     gap: 18px;
 
     padding: 8px 15px;
+
 }
 
 
-/* LOGO */
+/* ==================================================
+   LOGO
+================================================== */
 
 .logo {
+
     width: 110px;
+
     height: 45px;
 
     display: flex;
+
     align-items: center;
 
-    overflow: hidden;
+    justify-content: center;
+
     flex-shrink: 0;
+
 }
+
 
 .logo img {
-    width: 100px;
-    height: auto;
 
-    max-width: 100px;
-    max-height: 40px;
+    width: 105px;
+
+    max-height: 42px;
 
     object-fit: contain;
+
     display: block;
+
 }
 
 
-/* =========================
+/* ==================================================
    LOCATION
-========================= */
+================================================== */
 
 .location {
+
     display: flex;
-    flex-direction: row;
+
     align-items: center;
-    gap: 5px;
+
+    gap: 7px;
 
     white-space: nowrap;
+
+    flex-shrink: 0;
+
 }
+
 
 .location img {
-    width: 18px;
-    height: 18px;
+
+    width: 20px;
+
+    height: 20px;
 
     object-fit: contain;
+
 }
+
 
 .location div {
+
     display: flex;
+
     flex-direction: column;
+
 }
+
 
 .location small {
+
     color: #cccccc;
+
     font-size: 11px;
+
+    line-height: 14px;
+
 }
+
 
 .location strong {
-    font-size: 13px;
+
+    font-size: 14px;
+
+    line-height: 17px;
+
 }
 
 
-/* =========================
-   SEARCH
-========================= */
+/* ==================================================
+   SEARCH BOX
+================================================== */
 
 .search-box {
+
     display: flex;
+
     height: 40px;
+
     flex: 1;
+
+    min-width: 200px;
+
 }
 
+
 .search-box select {
+
     width: 55px;
 
     border: none;
 
+    border-radius: 4px 0 0 4px;
+
     background-color: #e6e6e6;
 
-    padding-left: 8px;
+    color: #111;
+
+    padding-left: 10px;
+
+    font-size: 13px;
+
 }
 
+
 .search-box input {
+
     flex: 1;
 
     border: none;
+
+    outline: none;
 
     padding: 10px;
 
     font-size: 15px;
 
-    outline: none;
 }
 
+
 .search-box button {
+
     width: 50px;
 
     border: none;
+
+    border-radius: 0 4px 4px 0;
 
     background-color: #febd69;
 
     cursor: pointer;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
+
 }
+
+
+.search-box button:hover {
+
+    background-color: #f3a847;
+
+}
+
 
 .search-box button img {
-    width: 22px;
-    height: 22px;
+
+    width: 23px;
+
+    height: 23px;
 
     object-fit: contain;
+
 }
 
 
-/* =========================
-   RIGHT SIDE
-========================= */
+/* ==================================================
+   LANGUAGE
+================================================== */
 
 .language {
-    font-weight: bold;
 
     display: flex;
+
     align-items: center;
+
     gap: 5px;
 
     white-space: nowrap;
+
+    font-size: 14px;
+
+    flex-shrink: 0;
+
 }
 
+
 .language img {
+
     width: 22px;
+
     height: 15px;
 
     object-fit: cover;
+
 }
+
+
+.language span {
+
+    font-size: 9px;
+
+}
+
+
+/* ==================================================
+   ACCOUNT + ORDERS
+================================================== */
 
 .account,
 .orders {
+
     display: flex;
+
     flex-direction: column;
 
     white-space: nowrap;
+
+    flex-shrink: 0;
+
 }
+
 
 .account small,
 .orders small {
+
     font-size: 11px;
+
+    line-height: 14px;
+
 }
+
 
 .account strong,
 .orders strong {
-    font-size: 13px;
+
+    font-size: 14px;
+
+    line-height: 17px;
+
 }
 
 
-/* CART */
+/* ==================================================
+   CART
+================================================== */
 
 .cart {
-    font-weight: bold;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
 
     white-space: nowrap;
 
-    display: flex;
-    align-items: center;
-    gap: 5px;
+    flex-shrink: 0;
+
 }
+
 
 .cart img {
-    width: 32px;
-    height: 32px;
+
+    width: 35px;
+
+    height: 35px;
 
     object-fit: contain;
+
 }
 
 
-/* =========================
-   SECOND NAVIGATION
-========================= */
+.cart strong {
+
+    font-size: 16px;
+
+}
+
+
+/* ==================================================
+   SECOND NAVIGATION BAR
+================================================== */
 
 .navbar {
+
+    width: 100%;
+
     height: 45px;
 
     background-color: #232f3e;
 
     display: flex;
-    align-items: center;
 
-    padding: 0 15px;
+    align-items: center;
 
     gap: 25px;
 
+    padding: 0 15px;
+
     overflow: hidden;
+
 }
 
+
 .navbar a {
+
     color: white;
 
     text-decoration: none;
@@ -228,9 +372,25 @@ body {
     font-size: 14px;
 
     white-space: nowrap;
+
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+
 }
 
+
+.navbar a:hover {
+
+    border: 1px solid white;
+
+}
+
+
 .all-button {
+
     background: none;
 
     border: none;
@@ -244,39 +404,65 @@ body {
     cursor: pointer;
 
     white-space: nowrap;
+
+    height: 45px;
+
+    padding: 0 3px;
+
 }
 
 
-/* =========================
+.all-button:hover {
+
+    border: 1px solid white;
+
+}
+
+
+/* ==================================================
    SIDE MENU
-========================= */
+================================================== */
 
 .side-menu {
+
     position: fixed;
 
     top: 0;
-    left: -380px;
+
+    left: -390px;
 
     width: 365px;
+
     height: 100vh;
 
     background-color: white;
 
-    z-index: 10;
+    z-index: 100;
 
     transition: left 0.3s ease;
 
     overflow-y: auto;
+
+    box-shadow: 3px 0 10px rgba(0, 0, 0, 0.25);
+
 }
+
 
 .side-menu.show {
+
     left: 0;
+
 }
 
 
-/* MENU HEADER */
+/* ==================================================
+   MENU HEADER
+================================================== */
 
 .menu-header {
+
+    width: 100%;
+
     height: 65px;
 
     background-color: #232f3e;
@@ -289,193 +475,338 @@ body {
 
     justify-content: space-between;
 
-    padding: 0 25px;
+    padding: 0 18px 0 25px;
 
-    font-size: 20px;
 }
 
-.menu-header button {
-    background: none;
+
+.menu-user {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+
+.menu-user strong {
+
+    font-size: 20px;
+
+}
+
+
+.user-icon {
+
+    width: 30px;
+
+    height: 30px;
+
+    border-radius: 50%;
+
+    background-color: white;
+
+    color: #232f3e;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 13px;
+
+}
+
+
+.close-button {
+
+    width: 45px;
+
+    height: 45px;
 
     border: none;
+
+    background: transparent;
 
     color: white;
 
-    font-size: 35px;
+    font-size: 38px;
+
+    line-height: 38px;
 
     cursor: pointer;
+
 }
 
 
-/* MENU CONTENT */
+.close-button:hover {
+
+    background-color: rgba(255,255,255,0.1);
+
+}
+
+
+/* ==================================================
+   MENU CONTENT
+================================================== */
 
 .menu-content {
-    padding: 20px 25px;
+
+    padding: 20px 0 30px 0;
+
 }
 
-.menu-content h3 {
+
+.menu-section {
+
+    padding: 0 25px 20px 25px;
+
     margin-bottom: 15px;
 
-    font-size: 18px;
+    border-bottom: 1px solid #ddd;
+
 }
 
-.menu-content a {
+
+.menu-section:last-child {
+
+    border-bottom: none;
+
+}
+
+
+.menu-section h3 {
+
+    font-size: 18px;
+
+    color: #111;
+
+    margin-bottom: 12px;
+
+    font-weight: 700;
+
+}
+
+
+.menu-section a {
+
+    width: 100%;
+
+    min-height: 38px;
+
     display: flex;
+
+    align-items: center;
 
     justify-content: space-between;
 
-    padding: 10px 5px;
+    padding: 8px 5px;
 
-    color: #333;
+    color: #111;
 
     text-decoration: none;
 
-    font-size: 14px;
+    font-size: 15px;
+
 }
 
-.menu-content a:hover {
+
+.menu-section a:hover {
+
     background-color: #eeeeee;
-}
 
-.menu-content hr {
-    border: none;
-
-    border-top: 1px solid #ddd;
-
-    margin: 20px 0;
 }
 
 
-/* =========================
+.arrow {
+
+    font-size: 22px;
+
+    color: #555;
+
+}
+
+
+/* ==================================================
+   MORE CATEGORIES
+================================================== */
+
+.more-categories {
+
+    display: none;
+
+}
+
+
+.more-categories.show {
+
+    display: block;
+
+}
+
+
+.see-all {
+
+    color: #111 !important;
+
+}
+
+
+/* ==================================================
    OVERLAY
-========================= */
+================================================== */
 
 .overlay {
+
     display: none;
 
     position: fixed;
 
     top: 0;
+
     left: 0;
 
     width: 100%;
-    height: 100%;
 
-    background-color: rgba(0, 0, 0, 0.6);
+    height: 100vh;
 
-    z-index: 5;
+    background-color: rgba(0, 0, 0, 0.65);
+
+    z-index: 90;
+
 }
+
 
 .overlay.show {
+
     display: block;
+
 }
 
 
-/* =========================
-   MAIN CONTENT
-========================= */
+body.menu-open {
+
+    overflow: hidden;
+
+}
+
+
+/* ==================================================
+   MAIN PAGE
+================================================== */
 
 .main-content {
+
+    min-height: 500px;
+
     padding: 30px;
-}
 
-.product {
-    background-color: white;
-
-    width: 300px;
-
-    padding: 20px;
-
-    border-radius: 5px;
-}
-
-.product h2 {
-    margin-bottom: 15px;
-}
-
-.product p {
-    margin-bottom: 15px;
-}
-
-.product button {
-    background-color: #ffd814;
-
-    border: none;
-
-    padding: 10px 20px;
-
-    border-radius: 20px;
-
-    cursor: pointer;
 }
 
 
-/* =========================
-   MORE CATEGORIES
-========================= */
-
-#moreCategories {
-    display: none;
-}
-
-#moreCategories.show {
-    display: block;
-}
-
-
-/* =========================
+/* ==================================================
    RESPONSIVE
-========================= */
+================================================== */
 
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
 
-    .location,
-    .language,
-    .orders {
+    .location {
+
         display: none;
+
     }
 
-    .top-header {
-        gap: 10px;
+    .language {
+
+        display: none;
+
+    }
+
+}
+
+
+@media (max-width: 850px) {
+
+    .orders {
+
+        display: none;
+
     }
 
     .account {
+
         display: none;
+
     }
 
     .navbar a {
+
         display: none;
+
     }
+
 }
 
 
 @media (max-width: 600px) {
 
     .top-header {
+
+        min-height: 110px;
+
         flex-wrap: wrap;
+
+        gap: 8px;
+
     }
+
 
     .logo {
-        width: 100px;
-        height: 40px;
+
+        width: 95px;
+
     }
+
 
     .logo img {
-        width: 95px;
-        max-width: 95px;
+
+        width: 90px;
+
     }
 
+
     .search-box {
+
         order: 3;
 
         flex-basis: 100%;
+
+        width: 100%;
+
     }
+
 
     .cart {
-        font-size: 13px;
+
+        margin-left: auto;
+
     }
 
+
     .side-menu {
+
         width: 85%;
+
     }
+
+
+    .menu-user strong {
+
+        font-size: 18px;
+
+    }
+
 }

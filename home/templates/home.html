@@ -1,165 +1,484 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>Amazon</title>
+
+    <meta charset="UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="/static/style.css">
+    <title>Amazon</title>
+
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
 </head>
+
 
 <body>
 
-    <!-- Top Header -->
-    <header class="top-header">
 
-       <div class="logo">
-    <img src="{% static 'images/amazon-logo.svg' %}" alt="Amazon">
-</div>
+<!-- =========================
+     TOP HEADER
+========================= -->
 
-        <div class="location">
-    <img src="{% static 'images/location.svg' %}" alt="Location">
-    <div>
-        <small>Deliver to</small>
-        <strong>Sonipat 131021</strong>
+<header class="top-header">
+
+
+    <!-- AMAZON LOGO -->
+
+    <div class="logo">
+
+        <img
+            src="{% static 'images/amazon-logo.svg' %}"
+            alt="Amazon"
+        >
+
     </div>
-</div>
-        <div class="search-box">
-            <select>
-                <option>All</option>
-            </select>
 
-            <input type="text" placeholder="Search Amazon.in">
 
-          <button>
-    <img src="{% static 'images/search.svg' %}" alt="Search">
-</button>
-        </div>
-<div class="language">
-    <img src="{% static 'images/india.svg' %}" alt="India">
-    EN
-</div>
+    <!-- LOCATION -->
 
-        <div class="account">
-            <small>Hello, User</small>
-            <strong>Account & Lists</strong>
+    <div class="location">
+
+        <img
+            src="{% static 'images/location.svg' %}"
+            alt="Location"
+        >
+
+        <div>
+
+            <small>Deliver to</small>
+
+            <strong>Sonipat 131021</strong>
+
         </div>
 
-        <div class="orders">
-            <small>Returns</small>
-            <strong>& Orders</strong>
-        </div>
-
-       <div class="cart">
-    <img src="{% static 'images/cart.svg' %}" alt="Cart">
-    Cart
-</div>
-
-    </header>
+    </div>
 
 
-    <!-- Second Navigation Bar -->
-    <nav class="navbar">
+    <!-- SEARCH -->
 
-        <button class="all-button" onclick="openMenu()">
-            ☰ &nbsp; All
+    <div class="search-box">
+
+        <select>
+
+            <option>All</option>
+
+        </select>
+
+
+        <input
+            type="text"
+            placeholder="Search Amazon.in"
+        >
+
+
+        <button>
+
+            <img
+                src="{% static 'images/search.svg' %}"
+                alt="Search"
+            >
+
         </button>
 
-      {% for item in nav_items %}
-    <a href="#">{{ item }}</a>
-{% endfor %}
-    </nav>
+    </div>
 
 
-    <!-- Side Menu -->
-    <div class="side-menu" id="sideMenu">
+    <!-- LANGUAGE -->
 
-        <div class="menu-header">
+    <div class="language">
+
+        <img
+            src="{% static 'images/india.svg' %}"
+            alt="India"
+        >
+
+        <strong>EN</strong>
+
+        <span>▼</span>
+
+    </div>
+
+
+    <!-- ACCOUNT -->
+
+    <div class="account">
+
+        <small>Hello, sign in</small>
+
+        <strong>Account & Lists</strong>
+
+    </div>
+
+
+    <!-- ORDERS -->
+
+    <div class="orders">
+
+        <small>Returns</small>
+
+        <strong>& Orders</strong>
+
+    </div>
+
+
+    <!-- CART -->
+
+    <div class="cart">
+
+        <img
+            src="{% static 'images/cart.svg' %}"
+            alt="Cart"
+        >
+
+        <strong>Cart</strong>
+
+    </div>
+
+
+</header>
+
+
+
+<!-- =========================
+     SECOND NAVIGATION
+========================= -->
+
+<nav class="navbar">
+
+
+    <!-- ALL BUTTON -->
+
+    <button
+        class="all-button"
+        onclick="openMenu()"
+    >
+
+        ☰
+
+        <span>All</span>
+
+    </button>
+
+
+    <!-- NAVIGATION ITEMS -->
+
+    {% for item in nav_items %}
+
+        <a href="#">
+            {{ item }}
+        </a>
+
+    {% endfor %}
+
+
+</nav>
+
+
+
+<!-- =========================
+     SIDE MENU
+========================= -->
+
+<div
+    class="side-menu"
+    id="sideMenu"
+>
+
+
+    <!-- MENU HEADER -->
+
+    <div class="menu-header">
+
+        <div class="menu-user">
+
+            <span class="user-icon">●</span>
+
             <strong>Hello, sign in</strong>
 
-            <button onclick="closeMenu()">×</button>
         </div>
 
-        <div class="menu-content">
+
+        <button
+            class="close-button"
+            onclick="closeMenu()"
+        >
+
+            ×
+
+        </button>
+
+    </div>
+
+
+
+    <!-- MENU CONTENT -->
+
+    <div class="menu-content">
+
+
+        <!-- TRENDING -->
+
+        <section class="menu-section">
 
             <h3>Trending</h3>
-<h3>Trending</h3>
-
-{% for item in trending %}
-    <a href="#">{{ item }}</a>
-{% endfor %}
 
 
-<h3>Digital Content and Devices</h3>
+            {% for item in trending %}
 
-{% for item in digital %}
-    <a href="#">
-        {{ item }}
-        <span>›</span>
-    </a>
-{% endfor %}
+                <a href="#">
 
-        <h3>Shop by Category</h3>
+                    {{ item }}
 
-{% for item in categories %}
-    <a href="#">{{ item }}</a>
-{% endfor %}
+                </a>
 
-<a href="#" onclick="showMoreCategories(event)">
-    See all
-    <span>⌄</span>
-</a>
+            {% endfor %}
 
-<h3>Programs & Features</h3>
-
-{% for item in programs %}
-    <a href="#">{{ item }}</a>
-{% endfor %}
-
-<a href="#">See all</a>
-
-<h3>Help & Settings</h3>
-
-{% for item in help_settings %}
-    <a href="#">{{ item }}</a>
-{% endfor %}
+        </section>
 
 
-    <!-- Dark background when menu opens -->
-    <div class="overlay" id="overlay" onclick="closeMenu()"></div>
+
+        <!-- DIGITAL CONTENT -->
+
+        <section class="menu-section">
+
+            <h3>Digital Content & Devices</h3>
 
 
-    <script>
+            {% for item in digital %}
+
+                <a href="#">
+
+                    <span>{{ item }}</span>
+
+                    <span class="arrow">›</span>
+
+                </a>
+
+            {% endfor %}
+
+        </section>
+
+
+
+        <!-- SHOP BY CATEGORY -->
+
+        <section class="menu-section">
+
+            <h3>Shop by Category</h3>
+
+
+            {% for item in categories %}
+
+                <a href="#">
+
+                    {{ item }}
+
+                </a>
+
+            {% endfor %}
+
+
+            <!-- MORE CATEGORIES -->
+
+            <div
+                id="moreCategories"
+                class="more-categories"
+            >
+
+                {% for item in more_categories %}
+
+                    <a href="#">
+
+                        {{ item }}
+
+                    </a>
+
+                {% endfor %}
+
+            </div>
+
+
+            <!-- SEE ALL -->
+
+            <a
+                href="#"
+                class="see-all"
+                onclick="showMoreCategories(event)"
+            >
+
+                <span id="seeAllText">
+                    See all
+                </span>
+
+                <span id="seeAllArrow">
+                    ⌄
+                </span>
+
+            </a>
+
+        </section>
+
+
+
+        <!-- PROGRAMS -->
+
+        <section class="menu-section">
+
+            <h3>Programs & Features</h3>
+
+
+            {% for item in programs %}
+
+                <a href="#">
+
+                    {{ item }}
+
+                </a>
+
+            {% endfor %}
+
+
+            <a href="#" class="see-all">
+
+                See all
+
+            </a>
+
+        </section>
+
+
+
+        <!-- HELP -->
+
+        <section class="menu-section">
+
+            <h3>Help & Settings</h3>
+
+
+            {% for item in help_settings %}
+
+                <a href="#">
+
+                    {{ item }}
+
+                </a>
+
+            {% endfor %}
+
+        </section>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================
+     DARK OVERLAY
+========================= -->
+
+<div
+    class="overlay"
+    id="overlay"
+    onclick="closeMenu()"
+></div>
+
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
 
 function openMenu() {
 
-    document.getElementById("sideMenu").classList.add("show");
+    document
+        .getElementById("sideMenu")
+        .classList
+        .add("show");
 
-    document.getElementById("overlay").classList.add("show");
+
+    document
+        .getElementById("overlay")
+        .classList
+        .add("show");
+
+
+    document.body.classList.add("menu-open");
 
 }
+
 
 
 function closeMenu() {
 
-    document.getElementById("sideMenu").classList.remove("show");
+    document
+        .getElementById("sideMenu")
+        .classList
+        .remove("show");
 
-    document.getElementById("overlay").classList.remove("show");
+
+    document
+        .getElementById("overlay")
+        .classList
+        .remove("show");
+
+
+    document.body.classList.remove("menu-open");
 
 }
+
 
 
 function showMoreCategories(event) {
 
     event.preventDefault();
 
-    document.getElementById("moreCategories").classList.toggle("show");
+
+    const moreCategories =
+        document.getElementById("moreCategories");
+
+
+    const seeAllText =
+        document.getElementById("seeAllText");
+
+
+    const seeAllArrow =
+        document.getElementById("seeAllArrow");
+
+
+    moreCategories.classList.toggle("show");
+
+
+    if (moreCategories.classList.contains("show")) {
+
+        seeAllText.textContent = "See less";
+
+        seeAllArrow.textContent = "⌃";
+
+    }
+
+    else {
+
+        seeAllText.textContent = "See all";
+
+        seeAllArrow.textContent = "⌄";
+
+    }
 
 }
 
+
 </script>
 
+
 </body>
+
 </html>
