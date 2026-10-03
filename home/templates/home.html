@@ -1,0 +1,165 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Amazon</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+    <!-- Top Header -->
+    <header class="top-header">
+
+       <div class="logo">
+    <img src="{% static 'images/amazon-logo.svg' %}" alt="Amazon">
+</div>
+
+        <div class="location">
+    <img src="{% static 'images/location.svg' %}" alt="Location">
+    <div>
+        <small>Deliver to</small>
+        <strong>Sonipat 131021</strong>
+    </div>
+</div>
+        <div class="search-box">
+            <select>
+                <option>All</option>
+            </select>
+
+            <input type="text" placeholder="Search Amazon.in">
+
+          <button>
+    <img src="{% static 'images/search.svg' %}" alt="Search">
+</button>
+        </div>
+<div class="language">
+    <img src="{% static 'images/india.svg' %}" alt="India">
+    EN
+</div>
+
+        <div class="account">
+            <small>Hello, User</small>
+            <strong>Account & Lists</strong>
+        </div>
+
+        <div class="orders">
+            <small>Returns</small>
+            <strong>& Orders</strong>
+        </div>
+
+       <div class="cart">
+    <img src="{% static 'images/cart.svg' %}" alt="Cart">
+    Cart
+</div>
+
+    </header>
+
+
+    <!-- Second Navigation Bar -->
+    <nav class="navbar">
+
+        <button class="all-button" onclick="openMenu()">
+            ☰ &nbsp; All
+        </button>
+
+      {% for item in nav_items %}
+    <a href="#">{{ item }}</a>
+{% endfor %}
+    </nav>
+
+
+    <!-- Side Menu -->
+    <div class="side-menu" id="sideMenu">
+
+        <div class="menu-header">
+            <strong>Hello, sign in</strong>
+
+            <button onclick="closeMenu()">×</button>
+        </div>
+
+        <div class="menu-content">
+
+            <h3>Trending</h3>
+<h3>Trending</h3>
+
+{% for item in trending %}
+    <a href="#">{{ item }}</a>
+{% endfor %}
+
+
+<h3>Digital Content and Devices</h3>
+
+{% for item in digital %}
+    <a href="#">
+        {{ item }}
+        <span>›</span>
+    </a>
+{% endfor %}
+
+        <h3>Shop by Category</h3>
+
+{% for item in categories %}
+    <a href="#">{{ item }}</a>
+{% endfor %}
+
+<a href="#" onclick="showMoreCategories(event)">
+    See all
+    <span>⌄</span>
+</a>
+
+<h3>Programs & Features</h3>
+
+{% for item in programs %}
+    <a href="#">{{ item }}</a>
+{% endfor %}
+
+<a href="#">See all</a>
+
+<h3>Help & Settings</h3>
+
+{% for item in help_settings %}
+    <a href="#">{{ item }}</a>
+{% endfor %}
+
+
+    <!-- Dark background when menu opens -->
+    <div class="overlay" id="overlay" onclick="closeMenu()"></div>
+
+
+    <script>
+
+function openMenu() {
+
+    document.getElementById("sideMenu").classList.add("show");
+
+    document.getElementById("overlay").classList.add("show");
+
+}
+
+
+function closeMenu() {
+
+    document.getElementById("sideMenu").classList.remove("show");
+
+    document.getElementById("overlay").classList.remove("show");
+
+}
+
+
+function showMoreCategories(event) {
+
+    event.preventDefault();
+
+    document.getElementById("moreCategories").classList.toggle("show");
+
+}
+
+</script>
+
+</body>
+</html>
